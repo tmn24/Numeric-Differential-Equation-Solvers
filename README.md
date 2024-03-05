@@ -10,3 +10,9 @@ With any complex problem, the best thing you can do is attempt a similar, yet mu
 NewtonRaphson1SecondOrderVarDESolver uses Newton-Raphson's method of solving nonlinear systems of equations to solve for the Y values that most closely satisfy the systems of equations, and as such, the Differential Equation. The main problem I ran into was how to get all of the derivative terms for the jacobian. Symbolically getting them all was out of the question. I realized I could just numerically get each derivative by using the literal definition of the derivative. Thanks Calc 1!
 Anyway, this method worked pretty well for 1 variable Differential Equations. But I realized that it just wasn't as fast as I wanted. Not to mention I needed to add another variable and two more orders to reach the fourth order PDE that I wanted to solve.
 
+Thus, we are brought to Broyden's method. This method is essentially Newton-Raphson method but instead of doing an inverse matrix operation every iteration, you approximate the inverse matrix each iteration. This is much faster.
+This brings us to Broydens1VarSecondOrderDESolver.
+
+Finally, I made the two variable version of Broydens method which brings us to:
+Broydens2VarSecondOrderDESolver. From here, I need to add the functionality to include the fourth time derivative of x and y and write it in the context of the initial problem I am trying to solve.
+
